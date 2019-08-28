@@ -1,0 +1,33 @@
+<body>
+<p>employee-list works!</p>
+<h1>Employee Details</h1>
+<app-employee-count [all]="getAllemployeesCount()" [male]="getMaleEmployeesCount()" [female]="getFemaleEmployeesCount()"(countRadioButtonValueChange)='onRadioButtonValueChange($event)' >
+
+</app-employee-count>
+<br>
+<input type="text" [(ngModel)]='searchTerm'>;
+<br>
+<br>
+
+<table border ='1'>
+  <tr>
+    <th>Employee Code</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Annual Salary</th>
+    <th>Date Of Birth</th>
+  </tr>
+  <ng-container *ngFor='let emp of employees | employeefilter:searchTerm'>
+     <tr *ngIf='selectedRadioButtonValue == "all" || selectedRadioButtonValue == emp.gender'>
+    <td>{{emp.code |uppercase }}</td>  <!--pipes| uppercase-->
+    <td>{{emp.name |employeeTitle:emp.gender}}</td>
+    <td>{{emp.gender |lowercase}}</td> <!--pipes |lowercase -->
+    <td>{{emp.annualSalary |currency:'INR':false:'1.3-3'}}</td>
+    <td>{{emp.dateOfBirth |date:'fulDate'|uppercase}}</td> <!--pipe chaining-->
+  </tr>
+</ng-container>
+</table>
+<br>
+<br>
+</body>
+

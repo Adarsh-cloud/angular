@@ -1,0 +1,20 @@
+table{
+  color:green;
+  font-size: large;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: pink;
+
+}
+td{
+  padding:7px;
+  background:gainsboro;
+
+}
+h1{
+  color:blue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+body{
+  background: bisque;
+}

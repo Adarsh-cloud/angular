@@ -1,0 +1,13 @@
+<p>employee-count works!</p>
+<span Class='radioClass'>Show</span>
+<input type='radio' name="options" value="all"
+[(ngModel)]='selectedRadioButtonValue'
+(change)= 'countRadioButtonVaueChanged()'/>
+<span class="radioClass">{{"All("+all+")"}}</span>
+<input type='radio' name="options" value="Male"
+[(ngModel)]='selectedRadioButtonValue'
+(change)=' countRadioButtonVaueChanged()'/>
+<span class="radioClass">{{"Male("+male+")"}}</span>
+<input type='radio' name="options" value="Female"
+[(ngModel)]='selectedRadioButtonValue' (change)='countRadioButtonVaueChanged()'/>
+<span class="radioClass">{{"Female("+female+")"}}</span>
